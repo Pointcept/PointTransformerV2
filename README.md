@@ -206,6 +206,8 @@ Example running script is as follows:
 # ptv2m2: PTv2 mode2, disable PEM & Grouped Linear, GPU memory cost < 24G (recommend)
 # ScanNet
 sh scripts/train.sh -g 4 -d scannet -c semseg-ptv2m2-0-base -n semseg-ptv2m2-0-base
+# ScanNet test benchmark (train on train set and val set)
+sh scripts/train.sh -g 4 -d scannet -c semseg-ptv2m2-1-benchmark-submit -n semseg-ptv2m2-1-benchmark-submit
 # ScanNet200
 sh scripts/train.sh -g 4 -d scannet200 -c semseg-ptv2m2-0-base -n semseg-ptv2m2-0-base
 # S3DIS
@@ -281,8 +283,6 @@ The SpConv version `SparseUNet` in the codebase was fully rewrite from [Li Jiang
 # Uncomment "# from .spconv_unet import *" in "pcr/models/sparse_unet/__init__.py"
 # ScanNet val
 sh scripts/train.sh -g 4 -d scannet -c semseg-spunet34c-0-base -n semseg-spunet34c-0-base
-# ScanNet test benchmark (train on train set and val set)
-sh scripts/train.sh -g 4 -d scannet -c semseg-ptv2m2-1-benchmark-submit -n semseg-ptv2m2-1-benchmark-submit
 # ScanNet200
 sh scripts/train.sh -g 4 -d scannet200 -c semseg-spunet34c-0-base -n semseg-spunet34c-0-base
 # S3DIS
