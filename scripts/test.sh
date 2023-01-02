@@ -52,7 +52,7 @@ fi
 
 echo " =========> RUN TASK <========="
 
-#$PYTHON -u "$CODE_DIR"/tools/$TEST_CODE \
-$PYTHON -u tools/$TEST_CODE \
+#$PYTHON -u tools/$TEST_CODE \
+$PYTHON -u "$CODE_DIR"/tools/$TEST_CODE \
   --config-file "$CONFIG_DIR" \
   --options save_path="$EXP_DIR" weight="${MODEL_DIR}"/"${WEIGHT}".pth
