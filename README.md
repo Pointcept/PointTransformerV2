@@ -3,7 +3,7 @@
   <img src="figures/design.png" width="480">
 </p>
 
-This is a lightweight and easy-to-use codebase for point cloud recognition research supporting indoor & outdoor point cloud datasets and several backbones, namely PointCloudRecog (PCR). The next release version of PCR will further support instance segmentation, object detection, and pretraining.
+This is a lightweight and easy-to-use codebase for point cloud recognition research supporting indoor & outdoor point cloud datasets and several backbones, namely **PointCloudRecog** (PCR). The next release version of PCR will further support instance segmentation, object detection, and pretraining.
 This is an official implementation of the following paper:
 
 - **Point Transformer V2: Grouped Vector Attention and Partition-based Pooling**   
@@ -230,7 +230,7 @@ Example training and testing records are as follows:
 | :-------------: | :--: | :--: | :----: | :----: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |  ScanNet v2 20  | 75.5 | 82.9 |  91.2  | [config](configs/scannet/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet20-ptv2m2/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-scannet20-ptv2m2/test.log) | [tensorboard](https://tensorboard.dev/experiment/xawxs1YXTA6315GH8nVhVg/#scalars&_smoothingWeight=0) |
 | *ScanNet v2 200 | 27.8 | 36.0 |  79.3  | [config](configs/scannet200/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet200-ptv2m2/train.log) |                             log                              | [tensorboard](https://tensorboard.dev/experiment/t34ZmwhbQ4WKBzSBI2Qp7A/#scalars&_smoothingWeight=0) |
-|  S3DIS Area 5   | 72.6 | 78.0 |  91.6  | [config](configs/s3dis/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-ptv2m2/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-ptv2m2/train.log) | [tensorboard](https://tensorboard.dev/experiment/DKbqkNvGTX6BxdHZx6Vi7Q/#scalars&_smoothingWeight=0) |
+|  S3DIS Area 5   | 72.6 | 78.0 |  91.6  | [config](configs/s3dis/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-ptv2m2/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-ptv2m2/test.log) | [tensorboard](https://tensorboard.dev/experiment/DKbqkNvGTX6BxdHZx6Vi7Q/#scalars&_smoothingWeight=0) |
 
 `*Dataset` represents reported results from an older version of the PCR codebase.
 
@@ -306,7 +306,9 @@ Example training and testing records are as follows:
 |    Dataset     | mIoU | mAcc | allAcc | Config |                            Train                             | Test |                         Tensorboard                          |
 | :------------: | :--: | :--: | :----: | :----: | :----------------------------------------------------------: | :--: | :----------------------------------------------------------: |
 | ScanNet v2 20  | 73.6 | 82.2 |  90.4  | [config](configs/scannet/semseg-spunet34c-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet20-spunet34c/train.log) | log  | [tensorboard](https://tensorboard.dev/experiment/A9w7yGCjRe6l4gwzNX2kOA/#scalars&_smoothingWeight=0) |
-| ScanNet v2 200 | 27.6 | 35.7 |  81.8  | [config](configs/scannet200/semseg-spunet34c-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet200-spunet34c/train.log) | log  | [tensorboard](https://tensorboard.dev/experiment/Zx8DbR2bQO6EnO9rRUPpAg/#scalars&_smoothingWeight=0) |
+| ScanNet v2 200 | 28.8 | 36.1 |  81.1  | [config](configs/scannet200/semseg-spunet34c-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet200-spunet34c/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-scannet200-spunet34c/test.log)  | [tensorboard](https://tensorboard.dev/experiment/oJWSEHBeTeOmT7M5uva5Ig/#scalars&_smoothingWeight=0) |
+|  S3DIS Area 5  | 67.7 | 73.1 |  90.1  | [config](configs/s3dis/semseg-spunet34c-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-spunet34c/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-spunet34c/test.log) | [tensorboard](https://tensorboard.dev/experiment/XGfX1SBBTpq0MrfQ6gO4IQ/#scalars&_smoothingWeight=0) |
+
 
 `*Dataset ` represents reported results from an older version of the PCR codebase.
 
