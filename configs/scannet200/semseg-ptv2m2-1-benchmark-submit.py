@@ -1,3 +1,5 @@
+from pcr.datasets.preprocessing.scannet.meta_data.scannet200_constants import CLASS_LABELS_200
+
 _base_ = ['../_base_/default_runtime.py',
           '../_base_/tests/segmentation.py']
 
@@ -12,7 +14,7 @@ evaluate = False
 model = dict(
     type="ptv2m2",
     in_channels=9,
-    num_classes=20,
+    num_classes=200,
     patch_embed_depth=1,
     patch_embed_channels=48,
     patch_embed_groups=6,
@@ -47,16 +49,13 @@ scheduler = dict(type='OneCycleLR',
 
 
 # dataset settings
-dataset_type = "ScanNetDataset"
+dataset_type = "ScanNet200Dataset"
 data_root = "data/scannet"
 
 data = dict(
-    num_classes=20,
+    num_classes=200,
     ignore_label=255,
-    names=["wall", "floor", "cabinet", "bed", "chair",
-           "sofa", "table", "door", "window", "bookshelf",
-           "picture", "counter", "desk", "curtain", "refridgerator",
-           "shower curtain", "toilet", "sink", "bathtub", "otherfurniture"],
+    names=CLASS_LABELS_200,
     train=dict(
         type=dataset_type,
         split=["train", "val"],
