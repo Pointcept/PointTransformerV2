@@ -3,7 +3,17 @@
   <img src="figures/design.png" width="480">
 </p>
 
-This is an official implementation of the paper [Point Transformer V2: Grouped Vector Attention and Partition-based Pooling](https://arxiv.org/abs/2210.05666) (NeurIPS 2022). This is also a codebase for point cloud recognition research.
+This is a lightweight and easy-to-use codebase for point cloud recognition research supporting indoor & outdoor point cloud datasets and several backbones, namely PointCloudRecog (PCR). The next release version of PCR will further support instance segmentation, object detection, and pretraining.
+This is an official implementation of the following paper:
+
+- **Point Transformer V2: Grouped Vector Attention and Partition-based Pooling**   
+*Xiaoyang Wu, Yixing Lao, Li Jiang, Xihui Liu, Hengshuang Zhao*  
+Neural Information Processing Systems (NeurIPS) 2022  
+[ [Arxiv](https://arxiv.org/abs/2210.05666) ] [ [Bib](https://xywu.me/research/ptv2/bib.txt) ]
+
+## News
+- *Dec, 2022*: Initial release our PCR codebase and PTv2 official implementation.
+- *Sep, 2022*: [PTv2](https://arxiv.org/abs/2210.05666) accepted by NeurIPS 2022.
 
 ## Overview
 
