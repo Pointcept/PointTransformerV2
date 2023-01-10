@@ -129,7 +129,7 @@ ln -s ${RAW_S3DIS_DIR} ${CODEBASE_DIR}/data/s3dis
 ```bash
 # SEMANTIC_KITTI_DIR: the directory of Semantic KITTI dataset.
 mkdir data
-ln -s ${SEMANTIC_KITTI_DIR} ${CODEBASE_DIR}/data/s3dis
+ln -s ${SEMANTIC_KITTI_DIR} ${CODEBASE_DIR}/data/semantic_kitti
 ```
 
 ## Quick Start
@@ -191,6 +191,13 @@ export PYTHONPATH=./
 python tools/test.py --config-file configs/scannet/semseg-ptv2m2-0-base.py --options save_path=exp/scannet/semseg-ptv2m2-0-base weight=exp/scannet/semseg-ptv2m2-0-base/models/model_best.pth
 ```
 
+### Offset
+`Offset` is the separator of point clouds in batch data, and it is similar to the concept of `Batch` in PyG. 
+A visual illustration of batch and offset is as follows:
+<p align="center">
+  <img src="figures/offset.png" width="480">
+</p>
+
 ## Model Zoo
 
 The PCR codebase supports most combinations of supporting datasets and models, and I haven't tested and tuned all the combinations. Consequently, I list configs for some of them. It would be helpful to reach me if you find a better setting.
@@ -228,7 +235,7 @@ Example training and testing records are as follows:
 
 |     Dataset     | mIoU | mAcc | allAcc | Config |                            Train                             |                             Test                             |                         Tensorboard                          |
 | :-------------: | :--: | :--: | :----: | :----: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|  ScanNet v2 20  | 75.5 | 82.9 |  91.2  | [config](configs/scannet/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet20-ptv2m2/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-scannet20-ptv2m2/test.log) | [tensorboard](https://tensorboard.dev/experiment/xawxs1YXTA6315GH8nVhVg/#scalars&_smoothingWeight=0) |
+|  ScanNet v2 20  | 75.5 | 82.9 |  91.2  | [config](configs/scannet/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet20-ptv2m2/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-scannet20-ptv2m2/test.log) | [tensorboard](https://tensorboard.dev/experiment/2eyHRBfrRyyywUqej9yh2w/#scalars&_smoothingWeight=0) |
 |  ScanNet v2 200 | 31.9 | 39.2 |  82.7  | [config](configs/scannet200/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-scannet200-ptv2m2/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-scannet200-ptv2m2/test.log) | [tensorboard](https://tensorboard.dev/experiment/V62nQuVgQKeaBAJKP59juw/#scalars&_smoothingWeight=0) |
 |  S3DIS Area 5   | 72.6 | 78.0 |  91.6  | [config](configs/s3dis/semseg-ptv2m2-0-base.py) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-ptv2m2/train.log) | [log](https://xywu.me/research/pcr/logs/semseg-s3dis-ptv2m2/test.log) | [tensorboard](https://tensorboard.dev/experiment/DKbqkNvGTX6BxdHZx6Vi7Q/#scalars&_smoothingWeight=0) |
 
