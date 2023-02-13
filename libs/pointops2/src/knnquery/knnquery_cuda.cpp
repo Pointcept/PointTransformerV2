@@ -1,5 +1,4 @@
 #include <vector>
-#include <THC/THC.h>
 #include <torch/serialize/tensor.h>
 #include <ATen/cuda/CUDAContext.h>
 #include "knnquery_cuda_kernel.h"
