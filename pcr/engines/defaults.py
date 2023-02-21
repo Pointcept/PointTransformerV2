@@ -111,15 +111,6 @@ def default_argument_parser(epilog=None):
     return parser
 
 
-def hfai_argument_parser():
-    parser = argparse.ArgumentParser(
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-    )
-    parser.add_argument('--config-file', default="", metavar="FILE", help="path to config file")
-    parser.add_argument('--options', nargs='+', action=DictAction, help='custom options')
-    return parser
-
-
 def default_config_parser(file_path, options):
     # config name protocol: dataset_name/model_name-exp_name
     if os.path.isfile(file_path):
