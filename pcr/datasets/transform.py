@@ -205,7 +205,7 @@ class RandomDropout(object):
         self.dropout_application_ratio = dropout_application_ratio
 
     def __call__(self, data_dict):
-        if random.random() < self.dropout_ratio:
+        if random.random() < self.dropout_application_ratio:
             n = len(data_dict["coord"])
             idx = np.random.choice(n, int(n * (1 - self.dropout_ratio)), replace=False)
             if "coord" in data_dict.keys():
