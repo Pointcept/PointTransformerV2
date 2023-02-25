@@ -99,7 +99,7 @@ data = dict(
                           voxel_size=0.02,
                           hash_type="fnv",
                           mode="test",
-                          keys=("coord", "norm", "color")
+                          keys=("coord", "normal", "color")
                           ),
             crop=None,
             post_transform=[
