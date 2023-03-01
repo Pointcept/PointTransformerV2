@@ -15,11 +15,13 @@ from torch.utils.data import Dataset
 from pcr.utils.logger import get_root_logger
 from .builder import DATASETS
 from .transform import Compose, TRANSFORMS
-from .preprocessing.scannet.meta_data.scannet200_constants import VALID_CLASS_IDS_200
+from .preprocessing.scannet.meta_data.scannet200_constants import VALID_CLASS_IDS_20, VALID_CLASS_IDS_200
 
 
 @DATASETS.register_module()
 class ScanNetDataset(Dataset):
+    class2id = np.array(VALID_CLASS_IDS_20)
+    
     def __init__(self,
                  split='train',
                  data_root='data/scannet',
@@ -34,7 +36,6 @@ class ScanNetDataset(Dataset):
         self.loop = loop if not test_mode else 1    # force make loop = 1 while in test mode
         self.test_mode = test_mode
         self.test_cfg = test_cfg if test_mode else None
-        self.class2id = np.array(VALID_CLASS_IDS_200)
 
         if test_mode:
             self.test_voxelize = TRANSFORMS.build(self.test_cfg.voxelize)
@@ -115,6 +116,8 @@ class ScanNetDataset(Dataset):
 
 @DATASETS.register_module()
 class ScanNet200Dataset(ScanNetDataset):
+    class2id = np.array(VALID_CLASS_IDS_200)
+    
     def get_data(self, idx):
         data = torch.load(self.data_list[idx % len(self.data_list)])
         coord = data["coord"]
