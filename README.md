@@ -3,7 +3,7 @@
   <img src="figures/design.png" width="480">
 </p>
 
-**This repo is not actively maintained. Please checkout our new codebase** [Pointcept](https://github.com/Pointcept/Pointcept)!
+**This repo is not actively maintained. Please checkout our new codebase** [Pointcept](https://github.com/Pointcept/Pointcept).
 
 This is a lightweight and easy-to-use codebase for point cloud recognition research supporting indoor & outdoor point cloud datasets and several backbones, namely **PointCloudRecog** (PCR). The next release version of PCR will further support instance segmentation, object detection, and pretraining.
 This is an official implementation of the following paper:
