@@ -11,7 +11,7 @@ enable_amp = True
 model = dict(
     type="MinkUNet34C",
     in_channels=9,
-    out_channels=200
+    out_channels=20
 )
 
 # scheduler settings
